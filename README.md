@@ -1,42 +1,81 @@
-# todo-app
+# Todo App
 
-現代 C++11/14/17/20 實作的命令列待辦清單小工具。  
-支援單元測試，跨平台（Windows / macOS / Linux / WSL）。
+A simple command-line Todo list manager written in modern C++.
 
-## 專案結構
+## Features
 
-```
-todo-app/
-├── CMakeLists.txt
-├── build.bat
-├── include/
-├── src/
-├── tests/
-├── docs/
-├── .gitignore
-└── README.md
-```
+- Add, list, mark, and delete tasks
+- Command-line interface
+- Unit-tested with Catch2
+- Cross-platform build via CMake
+- CI/CD automated with GitHub Actions
 
-## 目錄說明
-include/：C++ 標頭檔（介面定義）
+## Build
 
-src/：主程式與功能實作
+### Prerequisites
 
-tests/：單元測試程式、Catch2 測試框架
+- CMake >= 3.16
+- g++ >= 11 / clang++ / MSVC (with C++20 support)
 
-docs/：設計說明、UML、補充說明
+### Instructions
 
-.gitignore：git 版本控制忽略清單
-
-
-
-## 編譯與執行與測試
-在專案的根目錄下，使用以下命令編譯專案：
 ```bash
+# Clone the project
+git clone https://github.com/your-username/todo-app.git
+cd todo-app
+
+# Build on Unix/macOS
+bash build.sh
+
+# Or on Windows
+build.ps1
+
+# Alternatively, run platform-detecting build script
 python build.py
 ```
 
-這個腳本會根據你的系統去執行對應的腳本。
+## Run
 
-## TODO
-- [ ] 完成待辦清單的 CRUD 操作
+```bash
+./build/todo
+```
+
+## Test
+
+```bash
+./build/test_todo
+```
+
+## Folder Structure
+
+```
+todo-app/
+├── build/             # Build output (gitignored)
+├── docs/              # Documentation (e.g. UML)
+├── include/           # Header files
+│   └── todo_list.hpp
+├── src/               # Implementation
+│   ├── main.cpp
+│   └── todo_list.cpp
+├── tests/             # Unit tests
+│   └── test_todo.cpp
+├── .github/workflows/ # GitHub Actions workflows
+├── CMakeLists.txt     # CMake configuration
+├── build.sh           # Unix build script
+├── build.bat          # Windows build script
+├── build.py           # Cross-platform build launcher
+└── README.md          # Project overview
+```
+
+📘 [View UML Diagram](docs/todo_app_uml.md)
+
+## License
+
+MIT
+
+---
+
+🛠️ Built for learning modern C++ project structure, CMake, CI/CD, and clean architecture.
+
+
+
